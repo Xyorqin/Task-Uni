@@ -20,7 +20,7 @@ class AuthController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth:api', ['except' => ['login', 'register']]);
+        $this->middleware('auth:sanctum', ['except' => ['login', 'register']]);
     }
 
 
@@ -80,19 +80,9 @@ class AuthController extends Controller
      */
     public function logout()
     {
-        Auth::logout();
+        Auth::user()->currentAccessToken()->delete();
 
         return response()->successJson(['message' => 'Successfully logged out']);
-    }
-
-    /**
-     * Refresh a token.
-     *
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function refresh()
-    {
-        return $this->respondWithToken(auth()->refresh(), \auth()->user());
     }
 
     /**

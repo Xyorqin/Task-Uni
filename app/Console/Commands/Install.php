@@ -77,7 +77,7 @@ class Install extends Command
             if (User::count() == 0) {
                 User::create([
                     'name'          => 'admin',
-                    'phone_number'  => "+998935441110",
+                    'phone_number'  => "+998914448867",
                     'role_id'       => $role_id,
                     'password'      => bcrypt('adminadmin'),
                 ]);

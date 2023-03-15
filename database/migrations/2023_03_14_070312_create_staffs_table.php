@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('first_name')->nullable();
             $table->string('middle_name')->nullable();
             $table->string('position')->nullable();
+            $table->string('passport_number')->unique()->nullable();
             $table->string('phone_number')->unique()->nullable();
             $table->string('address')->nullable();
             $table->unsignedBigInteger('company_id')->nullable();

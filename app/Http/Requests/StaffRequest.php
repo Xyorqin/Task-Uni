@@ -26,13 +26,14 @@ class StaffRequest extends FormRequest
     public function rules()
     {
         return [
-            'first_name'    => 'required|min:3',
-            'last_name'     => 'nullable|min:3',
-            'middle_name'   => 'nullable|min:3',
-            'position'      => 'nullable|min:3',
-            'phone_number'  => "required|string|unique:staffs",
-            'address'       => 'nullable|min:3',
-            'company_id'    => 'required|exists:companies,id',
+            'first_name'        => 'required|min:3',
+            'last_name'         => 'nullable|min:3',
+            'middle_name'       => 'nullable|min:3',
+            'position'          => 'nullable|min:3',
+            'passport_number'   => "required|regex:/^[A-Z]{2}\d{7}$/|string|unique:staffs",
+            'phone_number'      => "required|string|unique:staffs",
+            'address'           => 'nullable|min:3',
+            'company_id'        => 'required|exists:companies,id',
         ];
     }
 

@@ -26,11 +26,15 @@ class CompanyRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'           => 'required|min:2',
-            'address'        => 'nullable|min:3',
-            'password'        => 'nullable',
-            'phone_number'  => 'required|min:13|max:13',
-            'ceo_first_name' => 'required|min:3'
+            'name'              => 'required|min:2',
+            'address'           => 'nullable|min:3',
+            'password'          => 'nullable',
+            'phone_number'      => 'required|min:13|max:13',
+            'ceo_first_name'    => 'required|min:3',    
+            'ceo_last_name'     => 'nullable',
+            'ceo_middle_name'   => 'nullable',
+            'email'             => 'nullable',
+            'website'           => 'nullable',
         ];
     }
 
